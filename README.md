@@ -310,12 +310,12 @@ $$
 Where $J_v$ is a $3\times 6$ matrix. To improve robustness near singular configurations, which was the main problem with `continuous_movement`, the DLS inverse is used:
 
 $$
-J^{\#} = J_v^\top (J_v J_v^\top + \lambda^2I)^{-1}
+J^{D} = J_v^\top (J_v J_v^\top + \lambda^2I)^{-1}
 $$
 
 The joint velocity is then calculated as:
 $$
-\dot{q} = J^{\#} \dot{x}_d
+\dot{q} = J^{D} \dot{x}_d
 $$
 
 The calculated joint velocity is integrated over the control period:
