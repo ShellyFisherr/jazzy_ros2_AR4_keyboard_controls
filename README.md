@@ -339,6 +339,8 @@ The parameters present in the latest file `dls_reduced_controller` are given bel
 
 -`CONTROL_DT` : The time in between every itteration (currently 0.01 s = 100 Hz)
 
+- `damping_` : the damping constant lambda used for DLS (currently 0.005 = 0.5%)
+
 ## Safety behavior
 The standard safety measures listed for the AR4 robotic arm remain unaltered, such as the maximum joint velocities and radius of operation.
 
