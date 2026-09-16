@@ -444,31 +444,8 @@ private:
 
         Eigen::Matrix<double, 6, 6> dls_inverse = task_jacobian.transpose() * (task_jacobian * task_jacobian.transpose() + damping_matrix).inverse();
 
-        //Nullspace posture correction
-        // Eigen::MatrixXd null_space = Eigen::MatrixXd::Identity(6, 6) - 
-        //     dls_inverse * position_jacobian;
-        // Eigen::MatrixXd null_space = Eigen::MatrixXd::Identity(6,6) -
-        //     dls_inverse * task_jacobian;
-
-        // const double preferred_joint_5 = 0.35;  //prefered angle of 5th joint
-        // const double posture_gain = 0.1;
-
-        // Eigen::VectorXd posture_velocity = Eigen::VectorXd::Zero(6);
-
-        // posture_velocity(4) = posture_gain * (preferred_joint_5 - current_positions[4]);
-
         Eigen::Matrix<double, 6, 1> joint_velocity = dls_inverse * desired_twist;
-        //Eigen::VectorXd joint_velocity = dls_inverse * desired_task_velocity;
 
-        // joint_velocity = joint_velocity + null_space * posture_velocity;
-
-        // const double max_joint_velocity = 0.05;
-        
-        // for (int idx = 0; idx < joint_velocity.size(); ++idx)
-        // {
-        //     joint_velocity(idx) = std::clamp(joint_velocity(idx), 
-        //         -max_joint_velocity, max_joint_velocity);
-        // }
         Eigen::Matrix<double, 6, 1> achieved_twist = task_jacobian * joint_velocity;
 
         RCLCPP_INFO_THROTTLE(

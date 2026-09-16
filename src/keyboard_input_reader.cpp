@@ -79,7 +79,7 @@ private:
         publisher_->publish(msg);
 
         //remove later, debugging only
-        std::cout << "Publish key: " << pressed << std::endl;
+        // std::cout << "Publish key: " << pressed << std::endl;
     }
 
     int get_key()
