@@ -349,7 +349,7 @@ It however is adviced to have nobody in the vicinity of the arm itself to preven
 ## Licence
 MIT License
 
-Copyright (c) 2026 Daan Krijnen
+Copyright (c) 2026
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
